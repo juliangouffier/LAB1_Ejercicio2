@@ -58,6 +58,7 @@ public class Persona {
         this.altura = altura;
     }
     
+//  Aca dejo un metodo para comer, cualquier cosa lo cambian @Hernan
     public void comer(){
       LocalTime horaahora = reloj.getHora();
         
