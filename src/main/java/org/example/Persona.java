@@ -4,6 +4,8 @@
  */
 package org.example;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author El Angel
@@ -57,7 +59,23 @@ public class Persona {
     }
     
     public void comer(){
-      //Dependiendo de la hora decir si almuerza merienda cena 
+      LocalTime horaahora = reloj.getHora();
+        
+        int comp1 = horaahora.compareTo(LocalTime.of(6, 0, 0, 0));
+        int comp2 = horaahora.compareTo(LocalTime.of(11, 0, 0, 0));
+        int comp3 = horaahora.compareTo(LocalTime.of(15, 0, 0, 0));
+        int comp4 = horaahora.compareTo(LocalTime.of(19, 0, 0, 0));
+        int comp5 = horaahora.compareTo(LocalTime.of(23, 0, 0, 0));
+        
+        if ((comp1 == 0 || comp1 == 1) && (comp2 == 0 || comp2 == -1 )){
+            System.out.println("Estoy desayunando");
+        } else if((comp2 == 1) && (comp3 == 0 || comp3 == -1 )){
+            System.out.println("Estoy almorzando");
+        } else if((comp3 == 1) && (comp4 == 0 || comp4 == -1 )){
+            System.out.println("Estoy merendando");
+        } else if((comp4 == 1) && (comp5 == 0 || comp5 == -1 )){
+            System.out.println("Estoy cenando");
+        }
     }
     
     public void hablar(){
