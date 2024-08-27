@@ -4,7 +4,6 @@ import java.time.LocalTime;
 
 /**
  * @author Hernan
- * @author El Angel
  */
 public class Persona {
     

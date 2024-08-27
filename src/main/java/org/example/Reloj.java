@@ -6,7 +6,6 @@ import java.time.Month;
 
 /**
  * @author Hernan
- * @author El Angel
  */
 public class Reloj {
     private LocalDate dia;
@@ -14,9 +13,9 @@ public class Reloj {
     private String modelo;
     private String numeroSerie;
 
-    public Reloj(LocalDate dia ,LocalTime hora ,String modelo, String numeroSerie) {
-        this.dia = dia;
-        this.hora = hora;
+    public Reloj(String modelo, String numeroSerie) {
+        this.dia = LocalDate.now();
+        this.hora = LocalTime.now();
         this.modelo = modelo;
         this.numeroSerie = numeroSerie;
     }
