@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.example;
 
 import java.time.LocalTime;
 
 /**
- *
+ * @author Hernan
  * @author El Angel
  */
 public class Persona {
@@ -16,13 +12,15 @@ public class Persona {
     private String apellido;
     private int edad;
     private int altura;
+    private double peso;
     private Reloj reloj;
 
-    public Persona(String nombre, String apellido, int edad, int altura, Reloj reloj) {
+    public Persona(String nombre, String apellido, int edad, int altura, double peso, Reloj reloj) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.altura = altura;
+        this.peso = peso;
         this.reloj = reloj;
     }
 
@@ -58,7 +56,14 @@ public class Persona {
         this.altura = altura;
     }
     
-//  Aca dejo un metodo para comer, cualquier cosa lo cambian @Hernan
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+    
     public void comer(){
       LocalTime horaahora = reloj.getHora();
         
@@ -84,7 +89,7 @@ public class Persona {
     }
     
     public void decirHora(){
-        
+        System.out.println("La hora que marca mi reloj es: " + reloj.getHora());
     }
     
     
