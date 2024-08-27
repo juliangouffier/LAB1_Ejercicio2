@@ -6,6 +6,9 @@ import java.time.Month;
 
 /**
  * @author Hernan
+ * @author Julian
+ * @author Valeria
+ * @author Franco
  */
 public class Reloj {
     private LocalDate dia;
@@ -17,6 +20,22 @@ public class Reloj {
         this.dia = LocalDate.now();
         this.hora = LocalTime.now();
         this.modelo = modelo;
+        this.numeroSerie = numeroSerie;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
 
@@ -57,8 +76,12 @@ public class Reloj {
     }
     
     public void limpiarPantalla(){
-        dia = LocalDate.of(0, Month.JANUARY, 1);
+        LocalDate localDate = LocalDate.now();
+        dia = LocalDate.of(localDate.getYear(), Month.JANUARY, 1);
         hora = LocalTime.of(0, 0, 0, 0);
     }
-    
+
+   /* public String calcularPesoideal (double peso, int altura) {
+        return "Oops, este reloj no puede calcular eso";
+    }*/
 }

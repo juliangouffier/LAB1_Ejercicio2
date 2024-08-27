@@ -1,9 +1,13 @@
 package org.example;
 
 import java.time.LocalTime;
+import java.util.Date;
 
 /**
  * @author Hernan
+ * @author Julian
+ * @author Valeria
+ * @author Franco
  */
 public class Persona {
     
@@ -84,14 +88,19 @@ public class Persona {
     }
     
     public void hablar(){
-        //dependiendo de la fecha decir que dia es
+        String dia = DateUtils.obtenerDiaPorDate(this.getReloj().getDia());
+        System.out.println("Hoy es " + dia.toUpperCase());
     }
     
     public void decirHora(){
-        System.out.println("La hora que marca mi reloj es: " + reloj.getHora());
+        System.out.println("La hora que marca mi reloj es: " + reloj.getHora().getHour() + ":" + reloj.getHora().getMinute());
     }
-    
-    
-    
-    
+
+    public Reloj getReloj() {
+        return reloj;
+    }
+
+    public void setReloj(Reloj reloj) {
+        this.reloj = reloj;
+    }
 }
